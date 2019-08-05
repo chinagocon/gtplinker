@@ -1,39 +1,41 @@
-#### 一.下载连接器和文件解释
+## Competition Notes for 2019 “CHINA SECURITIES Cup” World AI Go Test Provisions
 
-> 请点击此链接下载连接器
+#### 1. GTP connector download and instructions for use
+> Please click the link to download the connector [here](https://github.com/chinagocon/gtplinker)
 
 ---
 
-> 在资源包中有 4 个文件分别为：
+> 4 files included in the resource:
 
 ```
-config.yaml //连接器的配置文件
+config.yaml //config file
 gtp-linker_linux // linux client
 gtp-linker_mac // osx client
 gtp-linker_windows.exe //windows client
 ```
 
-#### 二.配置文件详解
+#### 2. Explanation for the config file
+
 
 ```
 user:
-  user: ""  # 登录名，由主办方提供
-  password: ""  #登录密码,由主办方提供
+  user: ""  # login account
+  password: "" #login password
 game:
-  safe_time: 0  #安全时间（秒），会在time_left中自动扣减
-  min_time: 0 #当剩余时间< 安全时间时,使用此值作为引擎思考时间
+  safe_time: 0 #safe time(sec)，will be reduced in time_left
+  min_time: 0 # when time_left < safe_time, it will be used as your ai engine thinking
+time
   shell: "" # AI GTP Engine
 ```
+> How to config safe_time and min_time
 
-> safe_time 和 min_time 使用
+Basic time(sec) | Overtime periods | Safte Time |  Min Time | GTP 
+---|---|---|---|---|---|
+300 | 30sec/3times | 5 | 1 | time_left b 295 0
+0 | 30sec/3times | 5 | 1 | time_left b 25 1
+0 | 30sec/3times | 5 | 1 | time_left b 1 1
 
-| 常规时间(s) | 读秒时间(s) | 读秒次数 | safe time | min time | gtp               |
-| ----------- | ----------- | -------- | --------- | -------- | ----------------- |
-| 300         | 30          | 3        | 5         | 1        | time_left b 295 0 |
-| 0           | 30          | 3        | 5         | 1        | time_left b 25 1  |
-| 0           | 3           | 3        | 5         | 1        | time_left b 1 1   |
-
-#### 三.关于连接器使用到的命令有
+#### 3. Commands will be used
 
 ```
 clear_board
@@ -46,35 +48,41 @@ time_left
 komi
 ```
 
-#### 四.测试赛流程
 
-> 主办方会提供每位参赛这两个账号用于测试使用，当拿到账号时各位需要复制两个配置文件,目录结构如下
+#### 4. Test flow
+
+> We provided two accounts, one for the regulation game, one for the test, you can use one inviting another to test.
+
 
 ```
-config.yaml //连接器的配置文件
+config.yaml
 config1.yaml
 gtp-linker_linux // linux client
 gtp-linker_mac // osx client
 gtp-linker_windows.exe //windows client
 ```
 
+
 ```
 // client 1
  > cd  "linker dir"
  > ./gtp-linker_[os] --config config.yaml test
- // 提示输入邀请人账号，直接回车进入等待邀请
+ // according to the prompt, press enter to waiting
 ```
 
+
 ```
-//client 2
+//client 2 
  > cd  "linker dir"
  > ./gtp-linker_[os] --config config1.yaml test
- // 提示输入邀请人账号，输入 "client 1"中的账号邀请其对弈
+ // according to the prompt, press the test account to start test game
 ```
 
-#### 五.比赛流程
+
+#### 5. Flow for regulation game
 
 ```
 > cd  "linker dir"
 > ./gtp-linker_[os] run
 ```
+
