@@ -42,7 +42,7 @@ clear_board
 boardsize
 time_settings
 play
-gen_move
+genmove
 undo[removed "undo" command from v1.4]
 time_left
 komi
