@@ -1,0 +1,7 @@
+user:
+  user: ""  #用户名称
+  password: ""  #用户密码
+game:
+  safe_time: 0  #安全时间（秒）
+  min_time: 0 #当剩余时间< 安全时间时,使用此值作为引擎思考时间
+  shell: ""
