@@ -23,8 +23,8 @@ user:
   password: "" #login password
 game:
   safe_time: 0 #safe time(sec)，will be reduced in time_left
-  min_time: 0 # when time_left < safe_time, it will be used as your ai engine thinking
-time
+  min_time: 0 # when time_left < safe_time, it will be used as your ai engine thinking time
+  kgs_time: false # new setting，can support kgs-time_settings
   shell: "" # AI GTP Engine
 ```
 > How to config safe_time and min_time
@@ -32,8 +32,8 @@ time
 |Basic time(sec) | Overtime periods | Safte Time |  Min Time | GTP |
 |---|---|---|---|---|
 |300 | 30sec/3times | 5 | 1 | time_left b 295 0|
+|1 | 30sec/3times | 5 | 1 | time_left b 1 1|
 |0 | 30sec/3times | 5 | 1 | time_left b 25 1|
-|0 | 30sec/3times | 5 | 1 | time_left b 1 1|
 
 #### 3. Commands will be used
 
@@ -46,6 +46,7 @@ genmove
 undo[removed "undo" command from v1.4]
 time_left
 komi
+kgs-time_settings [option]
 ```
 
 
