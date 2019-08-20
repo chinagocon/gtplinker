@@ -5,4 +5,5 @@ game:
   safe_time: 0
   min_time: 0
   kgs_time: true
+  sync_time: false
   shell: ""
